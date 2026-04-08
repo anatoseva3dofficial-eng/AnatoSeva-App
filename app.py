@@ -1,4 +1,4 @@
-app.pyimport streamlit as st
+import streamlit as st
 
 st.set_page_config(page_title="AnatoSeva 3D", page_icon="🩺")
 
