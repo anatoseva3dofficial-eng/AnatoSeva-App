@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AnatoSeva V35.5 | Official</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+        .glow-border { border: 1px solid rgba(0, 243, 255, 0.3); box-shadow: 0 0 15px rgba(0, 243, 255, 0.1); }
+        .iphone-gold { border: 2px solid #ffd700 !important; box-shadow: 0 0 25px rgba(255, 215, 0, 0.2) !important; }
+    </style>
+</head>
+<body onload="identifyUser()" class="p-4">
+    <div class="flex justify-between items-center mb-8">
+        <h1 class="text-2xl font-black tracking-tighter text-cyan-400">ANATO<span class="text-white">SEVA</span></h1>
+        <div class="text-[9px] bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full border border-blue-500/50">ROBIN_AI_CORE</div>
+    </div>
+    <div class="glow-border bg-gray-900/50 p-6 rounded-3xl mb-6 text-center">
+        <h2 class="text-yellow-500 text-sm font-bold uppercase tracking-widest">Mission Haridwar 2026</h2>
+        <p class="text-3xl font-black my-2">₹15,40,88,200</p>
+        <div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-cyan-500 h-full w-[15.4%] rounded-full"></div></div>
+    </div>
+    <div id="target-card" class="glow-border bg-gray-900/80 p-8 rounded-[2.5rem] text-center transition-all duration-500">
+        <div id="vip-icon" class="hidden mb-4"><i class="fas fa-crown text-4xl text-yellow-500"></i></div>
+        <h3 id="card-title" class="text-xl font-bold mb-2">3D Anatomy Library</h3>
+        <p id="card-text" class="text-sm text-gray-400 mb-6">MBBS और Nursing के लिए प्रोफेशनल 3D विजुअल्स।</p>
+        <button id="action-btn" class="w-full bg-cyan-600 py-4 rounded-2xl font-bold shadow-lg">OPEN RENDERER</button>
+    </div>
+    <script>
+        function identifyUser() {
+            if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+                document.getElementById('target-card').classList.add('iphone-gold');
+                document.getElementById('vip-icon').classList.remove('hidden');
+                document.getElementById('card-title').innerText = "Premium Support Area";
+                const btn = document.getElementById('action-btn');
+                btn.innerText = "CONTRIBUTE TO MISSION";
+                btn.style.background = "linear-gradient(to right, #ffd700, #b8860b)";
+                btn.style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>
