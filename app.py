@@ -68,20 +68,3 @@ with st.container():
     st.markdown("</div>", unsafe_allow_html=True)
 
 st.success("Bhai ji, ab bas Video aur Audio banayein, InShot mein 1 minute mein merge karein aur upload kar dein!")
-            st.info("Bhai ji, agar neeche video load nahi hoti, toh 'Backup' tab check karein!")
-            st.error("Server Timeout: High traffic at 09:12 PM. Please use Backup Tab for instant result.")
-
-with tab2:
-    st.subheader("🛑 Emergency Video Links (No Login Required)")
-    st.write("अगर पाइथन इंजन स्लो है, तो इन बटनों का उपयोग करें, ये $100\%$ काम करेंगे:")
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("[![Luma AI](https://img.shields.io/badge/Luma_AI-Instant_Video-blue?style=for-the-badge)](https://lumalabs.ai/dream-machine)")
-        st.write("यह सबसे तेज़ वीडियो बनाता है।")
-    
-    with col2:
-        st.markdown("[![Pika Art](https://img.shields.io/badge/Pika_Art-Viral_Video-cyan?style=for-the-badge)](https://pika.art/home)")
-        st.write("USA/UK के लिए बेस्ट क्वालिटी।")
-
-st.sidebar.success("V37 Active: Mission $100M")
