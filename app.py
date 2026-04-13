@@ -1,39 +1,73 @@
 import streamlit as st
-import requests
 
-# --- 1. GLOBAL SETTINGS ---
-st.set_page_config(page_title="AnatoSeva Turbo v37", layout="wide")
+# --- 1. CONFIGURATION ---
+st.set_page_config(page_title="AnatoSeva Autopilot", layout="wide")
 
-# --- 2. DARK UI DESIGN ---
 st.markdown("""
     <style>
-    body {background-color: #050505; color: #e0e0e0;}
-    .stButton>button {background: linear-gradient(45deg, #00f3ff, #0078ff); color: white; font-weight: bold; border-radius: 10px; border: none; height: 3em;}
-    .stTextInput>div>div>input {background-color: #111; color: #00f3ff; border: 1px solid #333;}
-    .status-box {padding: 15px; border-radius: 10px; border: 1px solid #00f3ff; background: #111;}
+    body {background-color: #010103; color: white;}
+    .auto-box {border: 2px solid #00f3ff; padding: 15px; border-radius: 12px; background: #0a0a0a; margin-bottom: 20px;}
+    .stButton>button {background: linear-gradient(90deg, #00f3ff, #0078ff); color: black; font-weight: bold; border-radius: 8px;}
+    .highlight {color: #00f3ff; font-weight: bold;}
     </style>
     """, unsafe_allow_html=True)
 
-st.title("⚡ AnatoSeva Turbo Factory v37")
-st.write(f"**Commander Robin**, time is running out! Current Time: **09:12 PM**")
+st.title("🤖 AnatoSeva Autopilot Factory v39")
+st.write(f"Commander Robin, target locked. Time: **09:32 PM**")
 
-tab1, tab2 = st.tabs(["🚀 Instant Video Engine", "🛠️ Direct Access (Backup)"])
+# --- INPUT SECTION ---
+with st.container():
+    st.markdown("<div class='auto-box'>", unsafe_allow_html=True)
+    col_in1, col_in2 = st.columns([2, 1])
+    with col_in1:
+        topic = st.text_input("🎯 Video Topic:", "Human Brain Functions")
+    with col_in2:
+        language = st.selectbox("🌐 Target Language:", ["English (USA/UK)", "Hindi"])
+    st.markdown("</div>", unsafe_allow_html=True)
 
-with tab1:
-    st.subheader("1. Generate Master Prompt")
-    topic = st.text_input("Enter Topic (e.g., 3D Beating Heart):", "Human Heart Anatomy 3D")
+# --- THE AUTO-GENERATOR ---
+col_vid, col_aud = st.columns(2)
+
+with col_vid:
+    st.markdown("<div class='auto-box'>", unsafe_allow_html=True)
+    st.header("🎥 Step 1: Video Engine")
+    st.write("Generate your 3D Visual here:")
+    st.markdown("[![Luma AI](https://img.shields.io/badge/Luma_AI-Instant_Generate-blue?style=for-the-badge)](https://lumalabs.ai/dream-machine)")
+    st.caption("Copy this auto-prompt for Luma:")
+    st.code(f"Cinematic 3D animation of {topic}, medical accuracy, 8k, dark background, slow motion.")
+    st.markdown("</div>", unsafe_allow_html=True)
+
+with col_aud:
+    st.markdown("<div class='auto-box'>", unsafe_allow_html=True)
+    st.header("🎙️ Step 2: Voice Engine")
+    st.write("Generate your Professional AI Voice:")
+    st.markdown("[![ElevenLabs](https://img.shields.io/badge/ElevenLabs-Generate_Voice-cyan?style=for-the-badge)](https://elevenlabs.io/)")
+    st.caption("Copy this auto-script for ElevenLabs:")
+    script = f"Did you know that the {topic} is one of the most complex parts of the human body? It works tirelessly every second of your life. Let's explore its wonders together."
+    st.code(script)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+# --- AUTOMATIC METADATA ---
+st.header("📦 Step 3: All-in-One Metadata (Auto-Generated)")
+with st.container():
+    st.markdown("<div class='auto-box'>", unsafe_allow_html=True)
+    m1, m2, m3 = st.columns(3)
     
-    # Secret Technical Prompt
-    p_code = f"Cinematic 3D render of {topic}, medical visualization, 8k, highly detailed, floating in dark void, soft glowing blue light, hyper-realistic."
-    st.code(p_code)
-    
-    st.markdown("---")
-    
-    if st.button("🔥 Start Turbo Generation"):
-        st.warning("Connecting to Global AI Servers... Please wait.")
-        # Simulating API Connection for UI
-        with st.spinner("AI Engine is rendering your video..."):
-            # Yahan humne backup links diye hain kyunki 9 PM par servers busy hote hain
+    with m1:
+        st.subheader("🖼️ Thumbnail Idea")
+        st.write(f"Text on Image: <span class='highlight'>'{topic} SECRETS!'</span>", unsafe_allow_html=True)
+        st.write("Style: Glowing 3D with large bold text.")
+        
+    with m2:
+        st.subheader("📝 Description & Tags")
+        st.code(f"Exploring the wonders of {topic}! 🧬\n\n#Anatomy #3D #MedicalFacts #USA #UK #Shorts")
+        
+    with m3:
+        st.subheader("🏷️ Viral Title")
+        st.code(f"The Secret of {topic} You Didn't Know! 😱")
+    st.markdown("</div>", unsafe_allow_html=True)
+
+st.success("Bhai ji, ab bas Video aur Audio banayein, InShot mein 1 minute mein merge karein aur upload kar dein!")
             st.info("Bhai ji, agar neeche video load nahi hoti, toh 'Backup' tab check karein!")
             st.error("Server Timeout: High traffic at 09:12 PM. Please use Backup Tab for instant result.")
 
